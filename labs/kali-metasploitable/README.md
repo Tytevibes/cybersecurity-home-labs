@@ -107,3 +107,25 @@ These checks focused on the Windows host. Metasploitable remained intentionally 
 I successfully established communication between the virtual machines, documented exposed services, and compared Nmap findings with captured network traffic.
 
 All scanning was directed at my own lab target. This project covered setup, service discovery, traffic analysis, and host security review; exploitation was not performed.
+
+## Lab Evidence
+
+### Connectivity Test
+Four ping replies with 0% packet loss confirmed connectivity from Kali to Metasploitable.
+
+![Successful ping results](ping-results.jpeg)
+
+### Nmap Service Discovery
+The scan identified exposed TCP services and reported software versions.
+
+![Nmap scan results](nmap-results.jpeg)
+
+### Wireshark FTP Traffic
+Filtering for the target IP and TCP port 21 displayed FTP traffic and connection flags.
+
+![Filtered FTP packets](wireshark-ftp.jpeg)
+
+### Follow TCP Stream
+The readable FTP greeting showed vsFTPd 2.3.4, corroborating Nmap's reported version.
+
+![FTP server banner in TCP stream](ftp-stream.jpeg)
